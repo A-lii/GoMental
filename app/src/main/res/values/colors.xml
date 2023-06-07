@@ -12,6 +12,10 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
 
+    <color name="myTextColor">#FFFFFF</color>
+    <color name="myTextColor2">#FFF000</color>
+
+
     <color name="colorRed">#C11515</color>
     <color name="purpleDark">#FF210642</color>
     <color name="yellowLight">#fff777</color>
