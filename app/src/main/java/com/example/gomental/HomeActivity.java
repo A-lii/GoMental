@@ -39,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity (new Intent( HomeActivity.this, FindDoctorActivity.class));
+
             }
         });
 

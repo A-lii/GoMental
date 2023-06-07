@@ -63,6 +63,7 @@ public class FindDoctorActivity extends AppCompatActivity {
                 Intent it = new Intent( FindDoctorActivity.this, DoctorDetailsActivity.class);
                 it.putExtra("title", "Counselor");
                 startActivity(it);
+
             }
         });
 

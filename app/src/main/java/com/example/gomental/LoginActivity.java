@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                         // to save our data with key and value,
                         editor .apply();
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+
                     } else {
                         Toast.makeText(getApplicationContext(), "Invalid Username and Password.", Toast.LENGTH_SHORT).show();
                     }

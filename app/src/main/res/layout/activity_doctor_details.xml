@@ -7,6 +7,7 @@
     android:background="@drawable/back12"
     tools:context=".DoctorDetailsActivity">
 
+
     <TextView
         android:id="@+id/textViewDDName"
         android:layout_width="wrap_content"
