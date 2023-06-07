@@ -69,7 +69,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
             doctor_details = doctor_details1;
         else if(title.compareTo("Psychologist")==0)
             doctor_details = doctor_details2;
-        else if(title.compareTo("Child-Psychiatrist")==0)
+        else if(title.compareTo("Child Psychiatrist")==0)
             doctor_details = doctor_details3;
         else if(title.compareTo("Counselor")==0)
             doctor_details = doctor_details4;

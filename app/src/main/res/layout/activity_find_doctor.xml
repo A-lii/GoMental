@@ -68,7 +68,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/family_physicians" />
+                    android:src="@drawable/psychiatrist" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/dietician" />
+                    android:src="@drawable/psychologist" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -140,9 +140,9 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="91dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/dentist" />
+                    android:src="@drawable/child" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -179,7 +179,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/surgeon" />
+                    android:src="@drawable/counselor" />
 
                 <TextView
                     android:layout_width="wrap_content"
