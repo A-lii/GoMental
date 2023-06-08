@@ -43,5 +43,16 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        CardView reports = findViewById(R.id.cardReports);
+        reports.setOnClickListener (new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity (new Intent( HomeActivity.this, ReportsActivity.class));
+
+            }
+        });
+
+
     }
 }
