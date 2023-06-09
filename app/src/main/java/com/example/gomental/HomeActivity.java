@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-
+/*
         CardView reports = findViewById(R.id.cardReports);
         reports.setOnClickListener (new View.OnClickListener() {
             @Override
@@ -53,6 +53,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-
+*/
     }
 }
