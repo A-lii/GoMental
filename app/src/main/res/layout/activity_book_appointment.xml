@@ -60,7 +60,7 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewAppTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Book Appointment"
@@ -103,7 +103,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Address"
-        android:inputType="textEmailAddress"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -125,7 +125,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Contact Number"
-        android:inputType="textPassword"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -147,7 +147,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Fees"
-        android:inputType="textPassword"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
