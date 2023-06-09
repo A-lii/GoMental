@@ -6,26 +6,25 @@
     android:padding="8dp"
     android:layout_height="match_parent">
 
-
-
     <TextView
         android:id="@+id/line_a"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height= "wrap_content"
         android:text="TextView"
-        android:textColor="@color/myTextColor"
+        android:textColor="#ffffff"
         android:textSize="16sp"
         android:textStyle="italic" />
 
     <TextView
         android:id="@+id/line_b"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/TextView"
-        android:textColor="@color/myTextColor2"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#FFF000"
         android:textSize="14sp" />
 
     <LinearLayout
+
         android:layout_width="fill_parent"
         android:orientation="horizontal"
         android:weightSum="1"
@@ -39,25 +38,26 @@
             android:text="TextView"
             android:textColor="#ffff66"
             android:textSize="12sp"/>
+
+
         <TextView
             android:id="@+id/line_d"
             android:layout_width="0dp"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:text="TextView"
-
             android:textColor="#ffff66"
             android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/line_e"
+        <TextView android:id="@+id/line_e"
             android:layout_width="0dp"
             android:layout_weight="0.3"
             android:layout_height="wrap_content"
             android:text="TextView"
-
             android:textColor="#ffff66"
             android:textSize="12sp" />
+
     </LinearLayout>
 
-</LinearLayout>
+    </LinearLayout>
+
