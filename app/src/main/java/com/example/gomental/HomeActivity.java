@@ -50,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 startActivity (new Intent( HomeActivity.this, FindDoctorActivity.class));
 
+
             }
         });
 

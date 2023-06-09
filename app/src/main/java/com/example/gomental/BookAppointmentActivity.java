@@ -107,6 +107,7 @@ public class BookAppointmentActivity extends AppCompatActivity {
         int style = AlertDialog.THEME_HOLO_LIGHT;
         datePickerDialog = new DatePickerDialog( this, style, dateSetListener,year,month, day);
         datePickerDialog.getDatePicker().setMinDate(cal.getTimeInMillis()+86400000);
+
     }
 
     private void initTimePicker() {

@@ -88,6 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
         if(f1==1 && f2==1 && f3==1)
             return true;
         return false;
+
     }
 }
 }

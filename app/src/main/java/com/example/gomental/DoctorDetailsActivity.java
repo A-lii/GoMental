@@ -66,6 +66,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
         String title = it.getStringExtra("title");
         tv.setText(title);
 
+
         if(title.compareTo("Psychiatrist")==0)
             doctor_details = doctor_details1;
         else if(title.compareTo("Psychologist")==0)
