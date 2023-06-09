@@ -17,14 +17,14 @@ public class FindDoctorActivity extends AppCompatActivity {
 
         //CardView exit = findViewById(R.id.cardFDBack);
         //exit.setOnClickListener (new View.OnClickListener() {
-           // @Override
-           // public void onClick(View v) {
-             //   SharedPreferences.Editor editor = sharedpreferences.edit();
-             //   editor.clear();
-             //   editor .apply();
-             //   startActivity (new Intent( FindDoctorActivity.this, HomeActivity.class));
-          //  }
-       // });
+        // @Override
+        // public void onClick(View v) {
+        //   SharedPreferences.Editor editor = sharedpreferences.edit();
+        //   editor.clear();
+        //   editor .apply();
+        //   startActivity (new Intent( FindDoctorActivity.this, HomeActivity.class));
+        //  }
+        // });
 
         CardView psychiatrist = findViewById(R. id. cardFDPsychiatrist);
         psychiatrist.setOnClickListener(new View.OnClickListener() {
@@ -67,5 +67,5 @@ public class FindDoctorActivity extends AppCompatActivity {
             }
         });
 
-        }
+    }
 }

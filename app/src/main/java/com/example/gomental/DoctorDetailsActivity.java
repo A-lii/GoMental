@@ -17,34 +17,34 @@ import java.util.HashMap;
 public class DoctorDetailsActivity extends AppCompatActivity {
     private String[][] doctor_details1 =
             {
-                    {"Doctor Name: Prof. Brig. Gen. Dr. Kumrul Hasan", "Hospital Address: Combined Military Hospital, Dhaka", "Experience: 5 years", "Contact No.: +8809666700100", "1000"},
-                    {"Doctor Name: Dr. Mekhala Sarkar", "Hospital Address: National Institute of Mental Health & Hospital", "Experience: 12 years", "Contact No.: +8801611216232", "2000"},
-                    {"Doctor Name: Dr. Nigar Sultana", "Hospital Address: Evercare Hospital Dhaka ", "Experience: 2 years", "Contact No.: 10678", "3000"},
-                    {"Doctor Name: Dr. Arman Ibne Haq", "Hospital Address: Bangladesh Medical College & Hospital", "Experience: 3 years", "Contact No.: +8801715622916 ", "4000"},
-                    {"Doctor Name: Prof. Dr. Nurun Nahar Chowdhury", "Hospital Address: Green Life Medical College & Hospital", "Experience: 6 years", "Contact No.: +8801711907659", "2000"},
+                    {"Doctor Name: Prof. Brig. Gen. Dr. Kumrul Hasan", "Address: Combined Military Hospital, Dhaka", "Exp: 5yrs", "Mobile: 09666700100", "1000"},
+                    {"Doctor Name: Dr. Mekhala Sarkar", "Address: National Institute of Mental Health & Hospital", "Exp: 12yrs", "Mobile: 01611216232", "2000"},
+                    {"Doctor Name: Dr. Nigar Sultana", "Address: Evercare Hospital Dhaka ", "Exp: 2yrs", "Mobile: 10678", "3000"},
+                    {"Doctor Name: Dr. Arman Ibne Haq", "Address: Bangladesh Medical College & Hospital", "Exp: 3yrs", "Mobile: 01715622916 ", "4000"},
+                    {"Doctor Name: Prof. Dr. Nurun Nahar Chowdhury", "Address: Green Life Medical College & Hospital", "Exp: 6yrs", "Mobile: 01711907659", "2000"},
             };
     private String[][] doctor_details2 =
             {
-                    {"Doctor Name: Dr. Waziul Alam Chowdhury", "Hospital Address: Square Hospital", "Experience: 5 years", "Contact No.: +8809610010616", "3000"},
-                    {"Doctor Name: Ms. Sharmin Haque", "Hospital Address: Square Hospital", "Experience: 6 years", "Contact No.: +8809610010616", "2000"},
-                    {"Doctor Name: Ms. Sharmin akter", "Hospital Address: Evercare Hospital Dhaka", "Experience: 3 years", "Contact No.: +8809666710678", "4000"},
-                    {"Doctor Name: Ms. Fabia Alam", "Hospital Address: Evercare Hospital Dhaka", "Experience: 4 years", "Contact No.: +8809666710678", "3000"},
-                    {"Doctor Name: Ms. Tarana Anis", "Hospital Address: Evercare Hospital Dhaka", "Experience: 2 years", "Contact No.: +8809666710678", "2500"},
+                    {"Doctor Name: Dr. Waziul Alam Chowdhury", "Address: Square Hospital", "Exp: 5yrs", "Mobile: 09610010616", "3000"},
+                    {"Doctor Name: Ms. Sharmin Haque", "Address: Square Hospital", "Exp: 6yrs", "Mobile: 09610010616", "2000"},
+                    {"Doctor Name: Ms. Sharmin akter", "Address: Evercare Hospital Dhaka", "Exp: 3yrs", "Mobile: 09666710678", "4000"},
+                    {"Doctor Name: Ms. Fabia Alam", "Address: Evercare Hospital Dhaka", "Exp: 4yrs", "Mobile: 09666710678", "3000"},
+                    {"Doctor Name: Ms. Tarana Anis", "Address: Evercare Hospital Dhaka", "Exp: 2yrs", "Mobile: 09666710678", "2500"},
             };
     private String[][] doctor_details3 =
             {
-                    {"Doctor Name: Prof. Dr. Mohammad S I Mullick", "Hospital Address: Bangladesh Psychiatric Care, Shimanto Shambhar", "Experience: 7 years", "Contact No.: 01872-863002", "1000"},
-                    {"Doctor Name: Dr Anwara Begum", "Hospital Address: Rupayan Legend", "Experience: 3 years", "Contact No.: 01715-228152", "1000"},
-                    {"Doctor Name: Dr. Towhidul Islam", "Hospital Address: Dhaka Monorog Clinic", "Experience: 2 years", "Contact No.: 01750-693956", "1000"},
-                    {"Doctor Name: Md. Mehedi Hasan", "Hospital Address: Level 7 (Moar), Holding 02, Shaptak Square ", "Experience: 9 years", "Contact No.: 01715-703260", "1000"},
+                    {"Doctor Name: Prof. Dr. Mohammad S I Mullick", "Address: Bangladesh Psychiatric Care, Shimanto Shambhar", "Exp: 7yrs", "Mobile: 01872863002", "1000"},
+                    {"Doctor Name: Dr Anwara Begum", "Address: Rupayan Legend", "Exp: 3yrs", "Mobile: 01715-228152", "1000"},
+                    {"Doctor Name: Dr. Towhidul Islam", "Address: Dhaka Monorog Clinic", "Exp: 2yrs", "Mobile: 01750-693956", "1000"},
+                    {"Doctor Name: Md. Mehedi Hasan", "Address: Level 7 (Moar), Holding 02, Shaptak Square ", "Exp: 9yrs", "Mobile: 01715-703260", "1000"},
             };
     private String[][] doctor_details4 =
             {
-                    {"Doctor Name: Kamrul Hasan (Mind Trainer and Corporate Counselor)", "Hospital Address: Bangladesh Psychiatric Association", "Experience: 3 years", "Contact No.: 01743-039146", "1000"},
-                    {"Doctor Name: Dr. Zakiul Abrar (CBT Therapist & Life Coach)", "Hospital Address: Therapy Route", "Experience: 5 years", "Contact No.: 01715092302", "3000"},
-                    {"Doctor Name: Sumaia Azmi (Wellness Coach)", "Hospital Address: Nirvana ", "Experience: 4 years", "Contact No.: ", "4000"},
-                    {"Doctor Name: Amrito Mondol (Career Coach)", "Hospital Address: Bangladesh Psychiatric Association ", "Experience: 10 years", "Contact No.: 01325783456", "2000"},
-                    {"Doctor Name: Usmania Hamid (Anxiety Counselor) ", "Hospital Address: BtterHelp Association", "Experience: 2 years", "Contact No.: 01757623456", "3000"},
+                    {"Doctor Name: Kamrul Hasan (Mind Trainer and Corporate Counselor)", "Hospital Address: Bangladesh Psychiatric Association", "Exp: 3yrs", "Contact No.: 01743-039146", "1000"},
+                    {"Doctor Name: Dr. Zakiul Abrar (CBT Therapist & Life Coach)", "Hospital Address: Therapy Route", "Exp: 5yrs", "Contact No.: 01715092302", "3000"},
+                    {"Doctor Name: Sumaia Azmi (Wellness Coach)", "Hospital Address: Nirvana ", "Exp: 4yrs", "Contact No.: ", "4000"},
+                    {"Doctor Name: Amrito Mondol (Career Coach)", "Hospital Address: Bangladesh Psychiatric Association ", "Exp: 1yrs", "Contact No.: 01325783456", "2000"},
+                    {"Doctor Name: Usmania Hamid (Anxiety Counselor) ", "Hospital Address: BtterHelp Association", "Exp: 2yrs", "Contact No.: 01757623456", "3000"},
             };
 
     TextView tv;
@@ -60,7 +60,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_details);
 
         tv = findViewById(R.id.textViewDDTitle);
-        btn = findViewById(R.id.buttonDDBack);
+        btn = findViewById(R.id.buttonReportsGoToCart);
 
         Intent it = getIntent();
         String title = it.getStringExtra("title");
@@ -98,7 +98,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
                 new String[]{"line1", "line2", "line3", "line4", "line5"},
                 new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e}
                 );
-        ListView lst = findViewById(R.id.listviewDD);
+        ListView lst = findViewById(R.id.listviewReports);
         lst.setAdapter(sa);
 
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
