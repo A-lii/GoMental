@@ -86,6 +86,7 @@ public class DoctorDetailsActivity extends AppCompatActivity {
 
         list = new ArrayList();
         for(int i = 0; i<doctor_details.length; i++){
+
             item = new HashMap<String, String>();
             item.put("line1", doctor_details[i][0]);
             item.put("line2", doctor_details[i][1]);

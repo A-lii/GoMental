@@ -80,6 +80,7 @@ public class Database extends SQLiteOpenHelper {
         str[0] = username;
         str[1] = otype;
         SQLiteDatabase db = getWritableDatabase();
+
         db.delete("cart", "username=? and otype=?", str);
         db.close();
     }

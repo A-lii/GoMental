@@ -52,6 +52,7 @@ public class FindDoctorActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent it = new Intent( FindDoctorActivity.this, DoctorDetailsActivity.class);
                 it.putExtra("title", "Child Psychiatrist");
+
                 startActivity(it);
 
             }

@@ -29,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 editor.clear();
                 editor .apply();
+
                 startActivity (new Intent( HomeActivity.this, LoginActivity.class));
             }
         });
@@ -44,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         CardView reportsPage = findViewById(R.id.cardReports);
+
         reportsPage.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {

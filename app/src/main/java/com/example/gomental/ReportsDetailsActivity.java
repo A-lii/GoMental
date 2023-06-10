@@ -43,7 +43,7 @@ public class ReportsDetailsActivity extends AppCompatActivity {
             }
         });
 
-        btnAddToCart.setOnClickListener(new View.OnClickListener() {
+       btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);

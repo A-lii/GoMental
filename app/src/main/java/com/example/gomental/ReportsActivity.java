@@ -32,10 +32,10 @@ public class ReportsActivity extends AppCompatActivity {
                     "Kidney Function Test\n" +
                     "LDH Lactate Dehydrogenase, Serum\n" +
                     "Lipid Profile\n" +
-                    "Liver Function Test"  ,
-            "Blood Glucose Fasting"  ,
-            "COVID-19 Antibody - IgG"  ,
-            "Thyroid Profile-Total (13, 14 & TSH Ultra-sensitive)" ,
+                    "Liver Function Test",
+            "Blood Glucose Fasting",
+            "COVID-19 Antibody - IgG",
+            "Thyroid Profile-Total (13, 14 & TSH Ultra-sensitive)",
             "Complete Hemogram\n"  +
                     "CRP (C Reactive Protein) Quantitative, Serum\n" +
                     " Iron Studies\n" +
@@ -87,8 +87,8 @@ public class ReportsActivity extends AppCompatActivity {
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
-                Intent it = new Intent(ReportsActivity.this, ReportsDetailsActivity.class);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent it = new Intent(ReportsActivity.this,ReportsDetailsActivity.class);
                 it.putExtra("text1", packages[i][0]);
                 it.putExtra("text2", package_details[i]);
                 it.putExtra("text3", packages[i][4]);
