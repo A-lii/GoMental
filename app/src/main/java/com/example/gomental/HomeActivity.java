@@ -43,12 +43,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        CardView reports = findViewById(R.id.cardReports);
-        findDoctor.setOnClickListener (new View.OnClickListener() {
+        CardView reportsPage = findViewById(R.id.cardReports);
+        reportsPage.setOnClickListener (new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                startActivity (new Intent( HomeActivity.this, FindDoctorActivity.class));
+                startActivity (new Intent( HomeActivity.this, ReportsActivity.class));
 
 
             }
