@@ -15,16 +15,16 @@ public class FindDoctorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_doctor);
 
-        //CardView exit = findViewById(R.id.cardFDBack);
-        //exit.setOnClickListener (new View.OnClickListener() {
-        // @Override
-        // public void onClick(View v) {
-        //   SharedPreferences.Editor editor = sharedpreferences.edit();
-        //   editor.clear();
-        //   editor .apply();
-        //   startActivity (new Intent( FindDoctorActivity.this, HomeActivity.class));
-        //  }
-        // });
+    //    CardView exit = findViewById(R.id.cardFDBack);
+     //   exit.setOnClickListener (new View.OnClickListener() {
+      //   @Override
+       //  public void onClick(View v) {
+         //  SharedPreferences.Editor editor = sharedpreferences.edit();
+       //    editor.clear();
+       //    editor .apply();
+         //  startActivity (new Intent( FindDoctorActivity.this, HomeActivity.class));
+         // }
+      //   });
 
         CardView psychiatrist = findViewById(R. id. cardFDPsychiatrist);
         psychiatrist.setOnClickListener(new View.OnClickListener() {
