@@ -55,6 +55,9 @@ public class ReportsDetailsActivity extends AppCompatActivity {
 
                 if(db.checkCart(username, product)==1){
                     Toast.makeText(getApplicationContext(), "Product Already Added", Toast.LENGTH_SHORT).show();
+                } else {
+                    db.addCart(username, product, price, "reports");
+                    Toast.makeText(getApplicationContext(), "Record inserted to Cart", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(ReportsDetailsActivity.this, ReportsActivity.class));
                 }
             }
