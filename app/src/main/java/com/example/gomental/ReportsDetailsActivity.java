@@ -46,6 +46,7 @@ public class ReportsDetailsActivity extends AppCompatActivity {
        btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                 String username = sharedpreferences.getString("username", "").toString();
                 String product = tvPackageName.getText().toString();
@@ -56,10 +57,12 @@ public class ReportsDetailsActivity extends AppCompatActivity {
                 if(db.checkCart(username, product)==1){
                     Toast.makeText(getApplicationContext(), "Product Already Added", Toast.LENGTH_SHORT).show();
                 } else {
-                    db.addCart(username, product, price, "reports");
+                    db.addCart(username,product,price,"reports");
                     Toast.makeText(getApplicationContext(), "Record inserted to Cart", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(ReportsDetailsActivity.this, ReportsActivity.class));
+
                 }
+
             }
         });
 
