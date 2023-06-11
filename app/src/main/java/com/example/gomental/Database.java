@@ -18,7 +18,7 @@ public class Database extends SQLiteOpenHelper {
         String qry1 = "create table users (username text, email text, password text)";
         sqLiteDatabase.execSQL(qry1);
 
-        String qry2 = "create table users (username text, product text, price float, otype text)";
+        String qry2 = "create table cart (username text, product text, price float, otype text)";
         sqLiteDatabase.execSQL(qry2);
     }
 
