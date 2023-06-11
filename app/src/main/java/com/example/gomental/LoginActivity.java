@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,11 +42,12 @@ public class LoginActivity extends AppCompatActivity {
                     if(db.login(username,password)==1){
                         Toast.makeText(getApplicationContext(), "Login Successful.", Toast.LENGTH_SHORT).show();
                         SharedPreferences sharedpreferences = getSharedPreferences ( "shared _prefs", Context.MODE_PRIVATE) ;
-                        SharedPreferences. Editor editor = sharedpreferences.edit();
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.putString("username", username);
 
                         // to save our data with key and value,
-                        editor .apply();
+                        editor.apply();
+
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
 
                     } else {

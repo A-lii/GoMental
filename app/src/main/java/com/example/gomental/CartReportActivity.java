@@ -53,7 +53,7 @@ public class CartReportActivity extends AppCompatActivity {
 
         float totalAmount = 0;
         ArrayList dbData = db.getCartData(username,"reports");
-        Toast.makeText(getApplicationContext(),""+dbData, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),""+dbData, Toast.LENGTH_SHORT).show();
 
         packages = new String[dbData.size()][];
         for (int i=0;i<packages.length; i++){
@@ -94,6 +94,17 @@ public class CartReportActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CartReportActivity.this, ReportsActivity.class));
+            }
+        });
+
+        btnCheckout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(CartReportActivity.this,ReportsBookActivity.class);
+                it.putExtra("price", tvTotal.getText() );
+                it.putExtra("date", dateButton.getText() );
+                it.putExtra("time", timeButton.getText());
+                startActivity(it);
             }
         });
 

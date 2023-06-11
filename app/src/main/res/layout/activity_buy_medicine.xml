@@ -49,8 +49,8 @@
 
     <Button
         android:id="@+id/buttonBMBack"
-        android:layout_width="wrap_content"
-        android:layout_height="47dp"
+        android:layout_width="104dp"
+        android:layout_height="53dp"
         android:layout_marginBottom="16dp"
         android:text="BACK"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -74,8 +74,8 @@
 
     <Button
         android:id="@+id/buttonBMGoToCart"
-        android:layout_width="223dp"
-        android:layout_height="47dp"
+        android:layout_width="206dp"
+        android:layout_height="53dp"
         android:layout_marginBottom="16dp"
         android:text="Go To Cart"
         app:layout_constraintBottom_toBottomOf="parent"
