@@ -63,7 +63,7 @@ public class ReportsActivity extends AppCompatActivity {
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 startActivity(new Intent(ReportsActivity.this, HomeActivity.class));
             }
         });
@@ -93,6 +93,13 @@ public class ReportsActivity extends AppCompatActivity {
                 it.putExtra("text2", package_details[i]);
                 it.putExtra("text3", packages[i][4]);
                 startActivity(it);
+            }
+        });
+
+        btnGoToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ReportsActivity.this, CartReportActivity.class));
             }
         });
     }

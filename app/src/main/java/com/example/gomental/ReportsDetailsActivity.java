@@ -38,14 +38,14 @@ public class ReportsDetailsActivity extends AppCompatActivity {
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 startActivity(new Intent(ReportsDetailsActivity.this, ReportsActivity.class));
             }
         });
 
        btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                 String username = sharedpreferences.getString("username", "").toString();
                 String product = tvPackageName.getText().toString();

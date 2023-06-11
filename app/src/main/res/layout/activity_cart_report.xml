@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back12"
+    tools:context=".CartReportActivity">
+
+    <Button
+        android:id="@+id/buttonBack2"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_marginTop="40dp"
+        android:text="BACK"
+        app:layout_constraintEnd_toEnd0f="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartof="@+id/listView"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDatePicker"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="314dp"
+        android:layout_height="349dp"
+        android:layout_narginTop="32dp"
+        app:layout_constraintEnd_toEnd0f="@+id/textView_logo8"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartof="@+id/textView_logo8"
+        app:layout_constraintTop_toBottom0f="@+id/textView_logo8" />
+
+    <TextView
+        android:id="@+id/textView_logo7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text= "GoMental"
+        android:textColor="@color/purple_200"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottom0f="parent"
+        app:layout_constraintEnd_toEnd0f="parent"
+        app:layout_constraintStart_toStart0f="parent"
+        app:layout_constraintTop_toTop0f="parent"
+        app:layout_constraintVertical_bias="0.08999999" />
+
+
+    <TextView
+        android:id="@+id/textView_logo8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="608dp"
+        android:text="Deliver Location : Dhaka"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottom0f="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStart0f="parent"
+        app:layout_constraintTop_toBottom0f="Q+id/textView_Logo4"/>
+
+
+    <TextView
+        android:id="@+id/textviewPackageName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Lab Test Cant Items"
+        android:textColor="@color/yellowLight"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndof="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStart0f="parent"
+        app:layout_constraintTop_toBottom0f="@+id/textview_logo"/>
+
+    <TextView
+        android:id="@+id/textViewTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text= "Total Cost : 1298/-"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEnd0f="parent"
+        app:layout_constraintStart_toStart0f="parent"
+        app:layout_constraintTop_toBottom0f="@+id/listView"/>
+
+    <Button
+        android:id="@+id/buttonCheckout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Checkout"
+        app:layout_constraintEnd_toEnd0f="parent"
+        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintStart_toStart0f="parent"
+        app:layout_constraintTop_toBottom0f="@+id/buttonTimePicker"/>
+
+
+
+    <Button
+        android:id="@+id/buttonDatePicker"
+        style="?android:spinnerStyle"
+        android:layout_width="133dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="36dp"
+        android:text="15/07/2022”
+        app:layout_constraintEnd_toEnd0f="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStart0f="@+id/listView"
+        app:layout_constraintTop_toBottom0f="@+id/textViewTotalPrice"/>
+
+
+    <Button
+        android:id="@+id/buttonTimePicker"
+        style="?android:spinnerStyle"
+        android:layout_width="133dp”
+        android:layout_height="42dp"
+        android:layout_marginTop="36dp"
+        android:text="10:00"
+        app:layout_constraintEnd_toEnd0f="parent"
+        app:layout_constraintHorizontal_bias="0.751"
+        app:layout_constraintStart_toStart0f="@+id/listView"
+        app:layout_constraintTop_toBottom0f="@+id/textViewTotalPrice" />
+
+
+    <TextView
+        android:id="a+id/textViews"
+        android:layout_width-"wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Deliver Date"
+        android:textColor="@color/vellowLight"
+        app:layout_constraintBottom_toTop0f="@+id/buttonDatePicker"
+        app:layout_constraintEnd_toEnd0f-"parent"
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintStart_toStart0f="parent" />
+
+
+    <TextVien
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Deliver Time"
+        android:textColor="@color/yellowLight"
+        app:layout_constraintBottom_toTop0f="@+id/buttonTinePicker"
+        app:layout_constraintEnd_toEnd0f="parent"
+        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
