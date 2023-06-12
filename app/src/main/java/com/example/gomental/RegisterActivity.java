@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +16,8 @@ public class RegisterActivity extends AppCompatActivity {
     EditText edUsername, edEmail, edPassword, edConfirm;
     Button btn;
     TextView tv;
+
+    CheckBox cbAdmin, cbProfessional, cbUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,9 @@ public class RegisterActivity extends AppCompatActivity {
         edConfirm = findViewById(R.id.editTextAppFees);
         btn = findViewById(R.id.buttonRegister);
         tv = findViewById(R.id.textViewExistingUser);
+        cbAdmin = findViewById(R.id.checkboxAdmin);
+        cbProfessional = findViewById(R.id.checkboxProfessional);
+        cbUser = findViewById(R.id.checkboxUser);
 
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +48,16 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = edEmail.getText().toString();
                 String password = edPassword.getText().toString();
                 String confirm = edConfirm.getText().toString();
+                String role = "";
+
+                if (cbAdmin.isChecked()) {
+                    role = "Admin";
+                } else if (cbProfessional.isChecked()) {
+                    role = "Professional";
+                } else if (cbUser.isChecked()) {
+                    role = "User";
+                }
+
                 Database db = new Database(getApplicationContext(), "GoMental.db", null, 1);
                 if(username.length()==0 || email.length()==0 || password.length()==0 || confirm.length()==0){
                     Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
@@ -49,7 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
                 else {
                     if(password.compareTo(confirm)==0){
                         if(isValid(password)) {
-                                db.register(username, email, password);
+                                db.register(username, email, password,role);
                                     Toast.makeText(getApplicationContext(), "Record Inserted", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         }else{

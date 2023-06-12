@@ -35,20 +35,32 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String username = edUsername.getText().toString();
                 String password = edPassword.getText().toString();
+
                 Database db = new Database(getApplicationContext(), "GoMental.db", null, 1);
+
                 if (username.length() == 0 || password.length() == 0) {
                     Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
                 } else {
-                    if(db.login(username,password)==1){
+                    String role = db.getRoleByUsername(username);
+                    if(db.login(username,password,role)==1){
                         Toast.makeText(getApplicationContext(), "Login Successful.", Toast.LENGTH_SHORT).show();
+
                         SharedPreferences sharedpreferences = getSharedPreferences ( "shared _prefs", Context.MODE_PRIVATE) ;
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.putString("username", username);
+                        editor.putString("role", role);
+
 
                         // to save our data with key and value,
                         editor.apply();
-
-                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        Intent intent;
+                        if (role.equals("admin")) {
+                          intent = new Intent(LoginActivity.this, ProfessionalPanelActivity.class);
+                        } else if (role.equals("professional")) {
+                            intent = new Intent(LoginActivity.this, ProfessionalPanelActivity.class);
+                        } else if (role.equals("user")) {
+                            intent = new Intent(LoginActivity.this, HomeActivity.class);
+                        }
 
                     } else {
                         Toast.makeText(getApplicationContext(), "Invalid Username and Password.", Toast.LENGTH_SHORT).show();

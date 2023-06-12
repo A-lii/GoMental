@@ -24,7 +24,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String qry1 = "create table users (username text, email text, password text)";
+        String qry1 = "create table users (username text, email text, password text,role text)";
         sqLiteDatabase.execSQL(qry1);
 
         String qry2 = "create table cart (username text,product text, price float, otype text)";
@@ -43,17 +43,18 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("drop TABLE if exists users");
+        db.execSQL("Drop TABLE IF EXISTS users");
         db.execSQL("DROP TABLE IF EXISTS cart");
         db.execSQL("DROP TABLE IF EXISTS orderplace");
     }
 
-    public Boolean register (String username, String email, String password){
+    public Boolean register (String username, String email, String password, String role){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("username", username);
         cv.put("email", email);
         cv.put("password", password);
+        cv.put("role", role);
         long result = db.insert("users", null, cv);
         if(result != -1){
             return false;
@@ -62,17 +63,20 @@ public class Database extends SQLiteOpenHelper {
         }
     }
 
-    public int login(String username, String password) {
+    public int login(String username, String password, String role) {
         int result = 0;
-        String str[] = new String[2];
+        String str[] = new String[3];
         str[0] = username;
         str[1] = password;
+        str[2] = role;
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.rawQuery("select * from users where username=? and password=?", str);
+        Cursor c = db.rawQuery("select * from users where username=? and password=? and role=?", str);
         if (c.moveToFirst()) {
             result = 1;
         }
-        return result;
+        c.close();
+       return result;
+
     }
 
     /*
@@ -233,6 +237,20 @@ public class Database extends SQLiteOpenHelper {
 
         db.insert("call", null, values);
         db.close();
+    }
+
+    public String getRoleByUsername(String username) {
+        String role = "";
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT role FROM users WHERE username=?", new String[]{username});
+        if (c.moveToFirst()) {
+            int columnIndex = c.getColumnIndex("role");
+            if (columnIndex >= 0) {
+                role = c.getString(columnIndex);
+            }
+        }
+        c.close();
+        return role;
     }
 
 }

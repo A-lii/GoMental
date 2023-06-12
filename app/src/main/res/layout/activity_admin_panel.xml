@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".AdminPanelActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAddUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Users" />
+
+        <Button
+            android:id="@+id/btnUpdateUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Users" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnViewUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Users" />
+
+        <Button
+            android:id="@+id/btnDeleteUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Users" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnAddMedicines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Medicines" />
+
+        <Button
+            android:id="@+id/btnUpdateMedicines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Medicines" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnViewMedicines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Medicines" />
+
+        <Button
+            android:id="@+id/btnDeleteMedicines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Medicines" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnViewOrders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Orders" />
+
+</LinearLayout>
