@@ -57,13 +57,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.369" />
+        app:layout_constraintVertical_bias="0.303" />
 
     <EditText
         android:id="@+id/editTextAppAddress"
         android:layout_width="349dp"
         android:layout_height="58dp"
-        android:layout_marginTop="28dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_baseline_email_24"
         android:drawablePadding="10dp"
@@ -78,9 +77,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.479"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAppFullName"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextAppFullName"
+        app:layout_constraintVertical_bias="0.053" />
 
     <EditText
         android:id="@+id/editTextAppContactNumber"
@@ -102,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.592" />
+        app:layout_constraintVertical_bias="0.481" />
 
     <EditText
         android:id="@+id/editTextAppFees"
@@ -136,6 +134,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.866" />
+
+    <CheckBox
+        android:id="@+id/checkboxAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Admin"
+        android:textColor="#FBFAFA"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkboxProfessional"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextAppFees" />
+
+    <CheckBox
+        android:id="@+id/checkboxProfessional"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Professional"
+        android:textColor="#FBFAFA"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/checkboxUser"
+        app:layout_constraintStart_toEndOf="@+id/checkboxAdmin"
+        app:layout_constraintTop_toBottomOf="@id/editTextAppFees" />
+
+    <CheckBox
+        android:id="@+id/checkboxUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="User"
+        android:textColor="#FBFAFA"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/checkboxProfessional"
+        app:layout_constraintTop_toBottomOf="@id/editTextAppFees" />
 
     <TextView
         android:id="@+id/textViewExistingUser"
