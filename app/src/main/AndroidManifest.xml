@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
 
     <application
         android:allowBackup="true"
@@ -14,10 +15,13 @@
         android:theme="@style/Theme.GoMental"
         tools:targetApi="31">
         <activity
-            android:name=".OderDetailsActivity"
+            android:name=".CallTextActivity"
             android:exported="false" />
         <activity
-            android:name=".ReportsBookActivity"
+            android:name=".BuyMedicineBookActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartBuyMedicineActivity"
             android:exported="false" />
         <activity
             android:name=".CartReportActivity"

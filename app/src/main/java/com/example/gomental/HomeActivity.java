@@ -77,6 +77,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        CardView callText = findViewById(R.id.cardCallText);
+        callText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, CallTextActivity.class));
+            }
+        });
+
 
     }
 }
