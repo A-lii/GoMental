@@ -26,6 +26,7 @@ public class Database extends SQLiteOpenHelper {
 
         String qry3 = "create table orderplace (username text,fullname text, address text, contactno text, pincode int,date text,time text,amount float,otype text)";
         sqLiteDatabase.execSQL(qry3);
+
     }
 
     @Override
