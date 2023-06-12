@@ -52,7 +52,7 @@ public class ReportsDetailsActivity extends AppCompatActivity {
                 String product = tvPackageName.getText().toString();
                 float price = Float.parseFloat(intent.getStringExtra("text3").toString());
 
-                Database db = new Database(getApplicationContext(), "GoMental", null, 1);
+                Database db = new Database(getApplicationContext(), "GoMental.db", null, 1);
 
                 if(db.checkCart(username, product)==1){
                     Toast.makeText(getApplicationContext(), "Product Already Added", Toast.LENGTH_SHORT).show();

@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String username = edUsername.getText().toString();
                 String password = edPassword.getText().toString();
-                Database db = new Database(getApplicationContext(), "GoMental", null, 1);
+                Database db = new Database(getApplicationContext(), "GoMental.db", null, 1);
                 if (username.length() == 0 || password.length() == 0) {
                     Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
                 } else {

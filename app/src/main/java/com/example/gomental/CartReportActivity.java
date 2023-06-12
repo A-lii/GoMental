@@ -49,7 +49,7 @@ public class CartReportActivity extends AppCompatActivity {
         SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
         String username = sharedpreferences.getString("username", "").toString();
 
-        Database db = new Database(getApplicationContext(), "GoMental", null, 1);
+        Database db = new Database(getApplicationContext(), "GoMental.db", null, 1);
 
         float totalAmount = 0;
         ArrayList dbData = db.getCartData(username,"reports");

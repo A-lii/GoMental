@@ -3,6 +3,7 @@ package com.example.gomental;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -12,12 +13,12 @@ import java.util.ArrayList;
 
 public class Database extends SQLiteOpenHelper {
     public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+        super(context, "GoMental.db", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String qry1 = "create table users (username text, email text, password text)";
+        String qry1 = "create table users (username TEXT primary key, email TEXT, password TEXT)";
         sqLiteDatabase.execSQL(qry1);
 
         String qry2 = "create table cart (username text,product text, price float, otype text)";
@@ -29,26 +30,35 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-
+           db.execSQL("drop TABLE if exists users");
+           db.execSQL("DROP TABLE IF EXISTS cart");
+           db.execSQL("DROP TABLE IF EXISTS orderplace");
     }
 
-    public void register(String username, String email, String password) {
+
+
+        public Boolean register (String username, String email, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("username", username);
         cv.put("email", email);
         cv.put("password", password);
-        SQLiteDatabase db = getWritableDatabase();
-        db.insert("users", null, cv);
-
-        db.close();
+        long result = db.insert("users", null, cv);
+        if(result != -1){
+            return false;
+        }else{
+            return true;
+        }
     }
+
+
 
     public int login(String username, String password) {
         int result = 0;
         String str[] = new String[2];
         str[0] = username;
         str[1] = password;
-        SQLiteDatabase db = getReadableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("select * from users where username=? and password=?", str);
         if (c.moveToFirst()) {
             result = 1;
@@ -131,7 +141,7 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         String str[] = new String[1];
         str[0] = username;
-        Cursor c = db.rawQuery("select * from orderplace where username = ? and otype = ?", str);
+        Cursor c = db.rawQuery("SELECT * FROM orderplace WHERE username = ?", str);
         if (c.moveToFirst()) {
             do {
                 arr.add(c.getString(1)+"$"+c.getString(2)+"$"+c.getString(3)+"$"+c.getString(4)+"$"+c.getString(5)+"$"+c.getString(6)+"$"+c.getString(7)+"$"+c.getString(8));

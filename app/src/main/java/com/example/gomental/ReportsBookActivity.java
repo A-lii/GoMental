@@ -37,7 +37,7 @@ public class ReportsBookActivity extends AppCompatActivity {
                     SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                     String username = sharedpreferences.getString("username", "");
 
-                    try (Database db = new Database(getApplicationContext(), "GoMental", null, 1)) {
+                    try (Database db = new Database(getApplicationContext(), "GoMental.db", null, 1)) {
                         db.addOrder(username, edname.getText().toString(), edaddress.getText().toString(), edcontact.getText().toString(), Integer.parseInt(edpincode.getText().toString()), date, time, Float.parseFloat(price[1]), "reports");
                         db.removeCart(username, "reports");
                     } catch (Exception e){

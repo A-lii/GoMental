@@ -25,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
         edPassword = findViewById(R.id.editTextAppContactNumber);
         edEmail = findViewById(R.id.editTextAppAddress);
         edConfirm = findViewById(R.id.editTextAppFees);
-        btn = findViewById(R.id.buttonBookAppointment);
+        btn = findViewById(R.id.buttonRegister);
         tv = findViewById(R.id.textViewExistingUser);
 
         tv.setOnClickListener(new View.OnClickListener() {
@@ -42,17 +42,16 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = edEmail.getText().toString();
                 String password = edPassword.getText().toString();
                 String confirm = edConfirm.getText().toString();
-                Database db = new Database(getApplicationContext(), "GoMental", null, 1);
+                Database db = new Database(getApplicationContext(), "GoMental.db", null, 1);
                 if(username.length()==0 || email.length()==0 || password.length()==0 || confirm.length()==0){
                     Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     if(password.compareTo(confirm)==0){
                         if(isValid(password)) {
-                            db.register(username,email,password);
-                            Toast.makeText(getApplicationContext(), "Record Inserted", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-
+                                db.register(username, email, password);
+                                    Toast.makeText(getApplicationContext(), "Record Inserted", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         }else{
                             Toast.makeText(getApplicationContext(), "Password must contain at least 8 characters, habong letter, digit and symbol", Toast.LENGTH_SHORT).show();
                         }

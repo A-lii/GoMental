@@ -39,7 +39,7 @@ public class OderDetailsActivity extends AppCompatActivity {
             }
         });
 
-        Database db = new Database(getApplicationContext(), "GoMental", null, 1);
+        Database db = new Database(getApplicationContext(), "GoMental.db", null, 1);
         SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
         String username = sharedpreferences.getString("username", "");
         ArrayList<String> dbData = db.getOrderData(username);
