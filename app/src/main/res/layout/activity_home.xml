@@ -144,7 +144,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardHealthDoctor"
+            android:id="@+id/cardCallText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
@@ -172,7 +172,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Health Articles"
+                    android:text="Call or Text"
                     android:textAlignment="center"
                     android:textColor="@color/colorRed"
                     android:textStyle="bold" />

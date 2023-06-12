@@ -48,7 +48,7 @@ public class ReportsDetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
-                String username = sharedpreferences.getString("username", "").toString();
+                String username = sharedpreferences.getString("username", "");
                 String product = tvPackageName.getText().toString();
                 float price = Float.parseFloat(intent.getStringExtra("text3").toString());
 

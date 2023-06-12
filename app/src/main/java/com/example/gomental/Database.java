@@ -6,13 +6,20 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import java.util.ArrayList;
+
+
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Database extends SQLiteOpenHelper {
     public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+        super(context, name, factory, version + 1);
     }
 
     @Override
@@ -23,8 +30,13 @@ public class Database extends SQLiteOpenHelper {
         String qry2 = "create table cart (username text,product text, price float, otype text)";
         sqLiteDatabase.execSQL(qry2);
 
-        String qry3 = "create table orderplace (username text,fullname text, address text, contactno text, pincode int,date text,time text,amount float,otype text)";
+        String qry3 = "create table call (username text, date text, time text, duration text)";
         sqLiteDatabase.execSQL(qry3);
+
+        String qry4 = "create table text (username text, date text, time text)";
+        sqLiteDatabase.execSQL(qry4);
+
+
     }
 
     @Override
@@ -56,6 +68,7 @@ public class Database extends SQLiteOpenHelper {
         return result;
     }
 
+    /*
     public void addCart(String username, String product, float price, String otype) {
         ContentValues cv = new ContentValues();
         cv.put("username", username);
@@ -66,6 +79,8 @@ public class Database extends SQLiteOpenHelper {
         db.insert("cart", null, cv);
         db.close();
     }
+    */
+
 
     public int checkCart(String username, String product) {
         int result = 0;
@@ -91,7 +106,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public ArrayList getCartData(String username, String otype) {
+  /*  public ArrayList getCartData(String username, String otype) {
         ArrayList<String> arr = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
         String str[] = new String[2];
@@ -107,9 +122,72 @@ public class Database extends SQLiteOpenHelper {
         }
         db.close();
         return arr;
+
+
+    } */
+
+    public ArrayList getOrderData(String username){
+        ArrayList<String> arr = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        String str[] = new String[1];
+        str[0] = username;
+        Cursor c = db.rawQuery("select * from orderplace where username = ? and otype = ?", str);
+        if (c.moveToFirst()) {
+            do {
+                arr.add(c.getString(1)+"$"+c.getString(2)+"$"+c.getString(3)+"$"+c.getString(4)+"$"+c.getString(5)+"$"+c.getString(6)+"$"+c.getString(7)+"$"+c.getString(8));
+            } while (c.moveToNext());
+        }
+        db.close();
+        return arr;
     }
 
+
+
+    public ArrayList<String> getCartData(String username, String otype) {
+        ArrayList<String> cartData = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"product", "price"};
+        String selection = "username=? AND otype=?";
+        String[] selectionArgs = {username, otype};
+
+        Cursor c = db.query("cart", columns, selection, selectionArgs, null, null, null);
+
+        int productIndex = c.getColumnIndex("product");
+        int priceIndex = c.getColumnIndex("price");
+
+        while (c.moveToNext()) {
+            if (productIndex != -1 && priceIndex != -1) {
+                String product = c.getString(productIndex);
+                double price = c.getDouble(priceIndex);
+                String item = product + "$" + price;
+                cartData.add(item);
+            }
+        }
+
+        c.close();
+        return cartData;
+    }
+
+    public void addCart(String username, String product, float price, String otype) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("username", username);
+        values.put("otype", otype);
+        values.put("product", product);
+        values.put("price", price);
+
+        db.insert("cart", null, values);
+        db.close();
+    }
+
+
+
+
+
     public void addOrder(String username, String fullname, String address, String contact, int pincode, String date, String time, float price, String otype){
+
         ContentValues cv = new ContentValues ();
         cv.put ("username", username);
         cv.put ("fullname", fullname);
@@ -126,22 +204,31 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-    public ArrayList getOrderData(String username){
-        ArrayList<String> arr = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();
-        String str[] = new String[1];
-        str[0] = username;
-        Cursor c = db.rawQuery("select * from orderplace where username = ? and otype = ?", str);
-        if (c.moveToFirst()) {
-            do {
-                arr.add(c.getString(1)+"$"+c.getString(2)+"$"+c.getString(3)+"$"+c.getString(4)+"$"+c.getString(5)+"$"+c.getString(6)+"$"+c.getString(7)+"$"+c.getString(8));
-            } while (c.moveToNext());
-        }
+    public void addCallHistory(String name, String dateTime, String duration) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("name", name);
+        values.put("date_time", dateTime);
+        values.put("duration", duration);
+
+        db.insert("call_history", null, values);
         db.close();
-        return arr;
     }
+
+    public void addCall(String username, String date, String time, String duration) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("username", username);
+        values.put("date", date);
+        values.put("time", time);
+        values.put("duration", duration);
+
+        db.insert("call", null, values);
+        db.close();
+    }
+
+
+
 }
-
-
-
-
