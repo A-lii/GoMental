@@ -263,7 +263,7 @@ public class AdminPanelActivity extends AppCompatActivity {
         // You can use the provided Database class and its register() method to add the user
 
         Database database = new Database(AdminPanelActivity.this, "GoMental.db", null, 1);
-        boolean isRegistered = database.register(username, email, password,role);
+        boolean isRegistered = database.register(username, email, password, role);
 
         if (isRegistered) {
             // User added successfully
