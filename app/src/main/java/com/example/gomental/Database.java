@@ -226,6 +226,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
+
     public void addCall(String username, String date, String time, String duration) {
         SQLiteDatabase db = this.getWritableDatabase();
 
