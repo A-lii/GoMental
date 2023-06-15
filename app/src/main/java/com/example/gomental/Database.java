@@ -251,6 +251,7 @@ public class Database extends SQLiteOpenHelper {
         }
         c.close();
         return role;
+
     }
 
 }
