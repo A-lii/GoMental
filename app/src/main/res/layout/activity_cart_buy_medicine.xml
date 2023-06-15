@@ -37,7 +37,7 @@
         android:id="@+id/textViewBMCartTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reports and Packages"
+        android:text="Medicine Cart"
         android:textColor="@color/yellowLight"
         android:textSize="20sp"
         android:textStyle="bold"
