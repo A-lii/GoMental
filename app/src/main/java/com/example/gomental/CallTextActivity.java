@@ -35,7 +35,7 @@ public class CallTextActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get the call details
-                String username = "John Doe"; // Replace with the actual username
+                String username = "User Name"; // Replace with the actual username
                 String date = getCurrentDate(); // Implement getCurrentDate() to get the current date
                 String time = getCurrentTime(); // Implement getCurrentTime() to get the current time
                 String duration = "00:05:00"; // Replace with the actual call duration
@@ -84,7 +84,7 @@ public class CallTextActivity extends AppCompatActivity {
 
     private void sendText(String phoneNumber) {
         Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("smsto:" + phoneNumber));
+        intent.setData(Uri.parse("SMS_to:" + phoneNumber));
         startActivity(intent);
     }
 }
