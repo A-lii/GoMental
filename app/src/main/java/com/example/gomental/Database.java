@@ -24,7 +24,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String qry1 = "create table users (username text, email text, password text,role text)";
+        String qry1 = "create table users (username text, email text, password text)";
         sqLiteDatabase.execSQL(qry1);
 
         String qry2 = "create table cart (username text,product text, price float, otype text)";
@@ -43,40 +43,36 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("Drop TABLE IF EXISTS users");
+        db.execSQL("drop TABLE if exists users");
         db.execSQL("DROP TABLE IF EXISTS cart");
         db.execSQL("DROP TABLE IF EXISTS orderplace");
     }
 
-    public Boolean register (String username, String email, String password, String role){
+    public Boolean register(String username, String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("username", username);
         cv.put("email", email);
         cv.put("password", password);
-        cv.put("role", role);
         long result = db.insert("users", null, cv);
-        if(result != -1){
+        if (result != -1) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
 
-    public int login(String username, String password, String role) {
+    public int login(String username, String password) {
         int result = 0;
-        String str[] = new String[3];
+        String str[] = new String[2];
         str[0] = username;
         str[1] = password;
-        str[2] = role;
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.rawQuery("select * from users where username=? and password=? and role=?", str);
+        Cursor c = db.rawQuery("select * from users where username=? and password=?", str);
         if (c.moveToFirst()) {
             result = 1;
         }
-        c.close();
-       return result;
-
+        return result;
     }
 
     /*
@@ -104,7 +100,6 @@ public class Database extends SQLiteOpenHelper {
         db.insert("cart", null, values);
         db.close();
     }
-
 
 
     public int checkCart(String username, String product) {
@@ -179,25 +174,25 @@ public class Database extends SQLiteOpenHelper {
         return cartData;
     }
 
-    public void addOrder(String username, String fullname, String address, String contact, int pincode, String date, String time, float price, String otype){
-
-        ContentValues cv = new ContentValues ();
-        cv.put ("username", username);
-        cv.put ("fullname", fullname);
-        cv.put ("address", address);
-        cv.put ("contactno", contact);
-        cv.put ("pincode", pincode);
-        cv.put ("date", date);
-        cv.put ("time", time);
-        cv.put ("amount", price);
-        cv.put ("otype", otype);
-        SQLiteDatabase db = getWritableDatabase ();
-        db. insert( "orderplace", null, cv);
-        db.close ();
+    public void addOrder(String username, String fullname, String address, String contact, int pincode, String date, String time, float price, String otype) {
+        ContentValues cv = new ContentValues();
+        cv.put("username", username);
+        cv.put("fullname", fullname);
+        cv.put("address", address);
+        cv.put("contactno", contact);
+        cv.put("pincode", pincode);
+        cv.put("date", date);
+        cv.put("time", time);
+        cv.put("amount", price);
+        cv.put("otype", otype);
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert("orderplace", null, cv);
+        db.close();
 
     }
 
-    public ArrayList getOrderData(String username){
+
+    public ArrayList getOrderData(String username) {
         ArrayList<String> arr = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
         String str[] = new String[1];
@@ -205,13 +200,12 @@ public class Database extends SQLiteOpenHelper {
         Cursor c = db.rawQuery("SELECT * FROM orderplace WHERE username = ?", str);
         if (c.moveToFirst()) {
             do {
-                arr.add(c.getString(1)+"$"+c.getString(2)+"$"+c.getString(3)+"$"+c.getString(4)+"$"+c.getString(5)+"$"+c.getString(6)+"$"+c.getString(7)+"$"+c.getString(8));
+                arr.add(c.getString(1) + "$" + c.getString(2) + "$" + c.getString(3) + "$" + c.getString(4) + "$" + c.getString(5) + "$" + c.getString(6) + "$" + c.getString(7) + "$" + c.getString(8));
             } while (c.moveToNext());
         }
         db.close();
         return arr;
     }
-
 
 
     public void addCallHistory(String name, String dateTime, String duration) {
@@ -226,6 +220,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
+
     public void addCall(String username, String date, String time, String duration) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -239,18 +234,24 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public String getRoleByUsername(String username) {
-        String role = "";
+
+    public int checkAppointmentExists(String username, String fullname, String address, String contact, String date, String time) {
+        int result = 0;
+        String str[] = new String[6];
+        str[0] = username;
+        str[1] = fullname;
+        str[2] = address;
+        str[3] = contact;
+        str[2] = date;
+        str[3] = time;
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT role FROM users WHERE username=?", new String[]{username});
-        if (c.moveToFirst()) {
-            int columnIndex = c.getColumnIndex("role");
-            if (columnIndex >= 0) {
-                role = c.getString(columnIndex);
-            }
+        Cursor c = db.rawQuery("select * from orderplace where username = ? and fullname = ? and address = ? and contactno = ? and date = ? and time = ?", str);
+        if(c.moveToFirst()){
+            result = 1;
         }
-        c.close();
-        return role;
+        db.close();
+        return result;
     }
 
 }
+
