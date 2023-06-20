@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = edEmail.getText().toString();
                 String password = edPassword.getText().toString();
                 String confirm = edConfirm.getText().toString();
-                String role = "";
+                /*String role = "";
 
                 if (cbAdmin.isChecked()) {
                     role = "Admin";
@@ -58,6 +58,8 @@ public class RegisterActivity extends AppCompatActivity {
                     role = "User";
                 }
 
+                 */
+
                 Database db = new Database(getApplicationContext(), "GoMental.db", null, 1);
                 if(username.length()==0 || email.length()==0 || password.length()==0 || confirm.length()==0){
                     Toast.makeText(getApplicationContext(), "Please fill all the details", Toast.LENGTH_SHORT).show();
@@ -65,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                 else {
                     if(password.compareTo(confirm)==0){
                         if(isValid(password)) {
-                                db.register(username, email, password,role);
+                                db.register(username, email, password);
                                     Toast.makeText(getApplicationContext(), "Record Inserted", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                         }else{

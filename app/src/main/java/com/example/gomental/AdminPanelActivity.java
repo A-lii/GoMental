@@ -17,7 +17,7 @@ import androidx.appcompat.app.AlertDialog;
 import java.util.ArrayList;
 
 public class AdminPanelActivity extends AppCompatActivity {
-
+/*
     private Button btnViewUsers;
     private Button btnDeleteUsers;
     private Button btnAddUsers;
@@ -271,4 +271,8 @@ public class AdminPanelActivity extends AppCompatActivity {
             // Failed to add user
         }
     }
+
+ */
+
+
 }

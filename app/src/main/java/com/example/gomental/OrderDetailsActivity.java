@@ -14,7 +14,7 @@ import android.widget.SimpleAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class OderDetailsActivity extends AppCompatActivity {
+public class OrderDetailsActivity extends AppCompatActivity {
 
     private String[][] order_details;
 
@@ -35,14 +35,14 @@ public class OderDetailsActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(OderDetailsActivity.this, HomeActivity.class));
+                startActivity(new Intent(OrderDetailsActivity.this, HomeActivity.class));
             }
         });
 
         Database db = new Database(getApplicationContext(), "GoMental.db", null, 1);
         SharedPreferences sharedpreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
         String username = sharedpreferences.getString("username", "");
-        ArrayList<String> dbData = db.getOrderData(username);
+   /*     ArrayList<String> dbData = db.getOrderData(username);
 
         order_details = new String[dbData.size()][5];
         for (int i = 0; i < order_details.length; i++) {
@@ -57,6 +57,21 @@ public class OderDetailsActivity extends AppCompatActivity {
             }
             order_details[i][2] = "Rs. " + strData[6];
             order_details[i][4] = strData[7];
+        }
+
+    */
+
+
+        ArrayList<String[]> dbData = db.getOrderData(username);
+
+        order_details = new String[dbData.size()][5];
+        for (int i = 0; i < order_details.length; i++) {
+            String[] strData = dbData.get(i);
+            order_details[i][0] = strData[0];
+            order_details[i][1] = strData[1];
+            order_details[i][2] = strData[2];
+            order_details[i][3] = strData[3];
+            order_details[i][4] = strData[4];
         }
 
         list = new ArrayList<>();

@@ -35,6 +35,11 @@
             android:name=".BuyMedicineDetailsActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.gomental.ReportsBookActivity" />
+        <activity
+            android:name=".OrderDetailsActivity" />
+
+        <activity
             android:name=".BuyMedicineActivity"
             android:exported="false" />
         <activity

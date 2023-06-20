@@ -61,7 +61,7 @@ public class HomeActivity extends AppCompatActivity {
         orderDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, OderDetailsActivity.class));
+                startActivity(new Intent(HomeActivity.this, OrderDetailsActivity.class));
             }
         });
 
